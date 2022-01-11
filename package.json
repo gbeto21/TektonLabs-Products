@@ -1,0 +1,25 @@
+{
+  "name": "tektonlabsproducts",
+  "version": "1.0.0",
+  "description": "Tekton labs technical test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbeto21/TektonLabs-Products.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbeto21/TektonLabs-Products/issues"
+  },
+  "homepage": "https://github.com/gbeto21/TektonLabs-Products#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
