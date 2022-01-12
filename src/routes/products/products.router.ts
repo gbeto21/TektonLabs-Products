@@ -1,4 +1,6 @@
 import express, { Router } from "express";
+import validatorSchema from "../../schemas/product";
+import { validateRequestSchema } from "../../middleware/validateRequest";
 import {
   httpGetProduct,
   httpAddProduct,
@@ -7,7 +9,12 @@ import {
 
 const productsRouter: Router = express.Router();
 productsRouter.get("/:id", httpGetProduct);
-productsRouter.post("/", httpAddProduct);
+productsRouter.post(
+  "/",
+  validatorSchema,
+  validateRequestSchema,
+  httpAddProduct
+);
 productsRouter.put("/", httpUpdateProduct);
 
 export default productsRouter;
