@@ -13,7 +13,7 @@ app.use(BodyParser.json());
 
 app.use(api);
 
-app.listen(PORT, async () => {
+const server = app.listen(PORT, async () => {
   console.log("Server running.");
 
   try {
@@ -22,3 +22,5 @@ app.listen(PORT, async () => {
     console.error("Error connecting to the Database: ", error);
   }
 });
+
+export default { app, server };
