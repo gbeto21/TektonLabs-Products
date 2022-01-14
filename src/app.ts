@@ -1,4 +1,5 @@
 import express, { Application } from "express";
+require("dotenv").config();
 import cors from "cors";
 import BodyParser from "body-parser";
 import api from "./routes/api";
@@ -11,7 +12,7 @@ app.use(cors());
 app.use(BodyParser.urlencoded({ extended: false }));
 app.use(BodyParser.json());
 
-app.use(api);
+app.use(`/${process.env.NODE_ENV}`, api);
 
 const server = app.listen(PORT, async () => {
   console.log("Server running.");
