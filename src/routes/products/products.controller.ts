@@ -32,8 +32,11 @@ export async function httpAddProduct(req: Request, res: Response) {
 
 export async function httpUpdateProduct(req: Request, res: Response) {
   try {
+    const idProduct = req.params.id;
     const product: any = req.body;
-    await updateProduct(product);
+    await updateProduct(idProduct, product);
+    console.log("Updating product.");
+
     return res.status(204).json({ message: "Product updated" });
   } catch (error) {
     console.error(`Error updating the product. Error detail: ${error}:`);

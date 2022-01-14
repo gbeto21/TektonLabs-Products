@@ -15,6 +15,6 @@ productsRouter.post(
   validateRequestSchema,
   httpAddProduct
 );
-productsRouter.put("/", httpUpdateProduct);
+productsRouter.put("/:id", httpUpdateProduct);
 
 export default productsRouter;

@@ -10,9 +10,9 @@ export async function addProduct(product: any) {
   return result;
 }
 
-export async function updateProduct(product: any) {
+export async function updateProduct(idProduct: string, product: any) {
   const result = await productsDataBase.findOneAndUpdate(
-    { _id: product.id },
+    { _id: idProduct },
     product
   );
   return result;
